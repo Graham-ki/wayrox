@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeScrollToTop();
     initializeDynamicYear();
     initializeActiveLinks();
-    initializeFAQ();
     initializeContactForm();
 });
 
@@ -240,29 +239,11 @@ function initializeDynamicYear() {
 
 // ============ ACTIVE LINKS ============
 function initializeActiveLinks() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = window.location.pathname.split('/').pop() || 'index.php';
     document.querySelectorAll('.nav-menu a').forEach(link => {
         const href = link.getAttribute('href');
         if (href === currentPage) {
             link.classList.add('active');
-        }
-    });
-}
-
-// ============ FAQ ============
-function initializeFAQ() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    if (!faqItems.length) return;
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        if (question) {
-            question.addEventListener('click', () => {
-                faqItems.forEach(other => {
-                    if (other !== item) other.classList.remove('active');
-                });
-                item.classList.toggle('active');
-            });
         }
     });
 }

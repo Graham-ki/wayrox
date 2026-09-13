@@ -40,22 +40,22 @@ $products = [
         'pricing' => [
             [
                 'name' => 'Starter',
-                'price' => '$29',
-                'period' => 'per month',
+                'price' => 'Custom',
+                'period' => 'Contact us',
                 'featured' => false,
                 'features' => ['1 Store Location', 'Unlimited Products', 'Basic Reports', 'Email Support', 'Mobile App']
             ],
             [
                 'name' => 'Business',
-                'price' => '$79',
-                'period' => 'per month',
+                'price' => 'Custom',
+                'period' => 'Contact us',
                 'featured' => true,
                 'features' => ['Up to 5 Stores', 'Unlimited Products', 'Advanced Analytics', 'Marketplace Integration', 'Priority Support', 'Custom Reports']
             ],
             [
                 'name' => 'Enterprise',
                 'price' => 'Custom',
-                'period' => 'contact us',
+                'period' => 'Contact us',
                 'featured' => false,
                 'features' => ['Unlimited Stores', 'Custom Features', 'Dedicated Account Manager', 'API Access', '24/7 Phone Support', 'On-premise Option']
             ]
@@ -96,22 +96,22 @@ $products = [
         'pricing' => [
             [
                 'name' => 'Basic',
-                'price' => '$199',
-                'period' => 'per month',
+                'price' => 'Custom',
+                'period' => 'Contact us',
                 'featured' => false,
                 'features' => ['Single Production Line', 'Up to 50 Users', 'Basic Reports', 'Email Support', 'Mobile App']
             ],
             [
                 'name' => 'Professional',
-                'price' => '$499',
-                'period' => 'per month',
+                'price' => 'Custom',
+                'period' => 'Contact us',
                 'featured' => true,
                 'features' => ['Multiple Production Lines', 'Unlimited Users', 'Advanced Analytics', 'IoT Integration', 'Priority Support', 'Custom Reports']
             ],
             [
                 'name' => 'Enterprise',
                 'price' => 'Custom',
-                'period' => 'contact us',
+                'period' => 'Contact us',
                 'featured' => false,
                 'features' => ['Unlimited Facilities', 'Custom Development', 'Dedicated Account Manager', 'API Access', '24/7 Phone Support', 'On-premise Option']
             ]
@@ -152,22 +152,22 @@ $products = [
         'pricing' => [
             [
                 'name' => 'Small',
-                'price' => '$149',
-                'period' => 'per month',
+                'price' => 'Custom',
+                'period' => 'Contact us',
                 'featured' => false,
                 'features' => ['Up to 500 Members', 'Basic Reports', 'SMS Notifications', 'Email Support', 'Mobile App']
             ],
             [
                 'name' => 'Growing',
-                'price' => '$349',
-                'period' => 'per month',
+                'price' => 'Custom',
+                'period' => 'Contact us',
                 'featured' => true,
                 'features' => ['Up to 5,000 Members', 'Advanced Reports', 'Multi-Branch', 'Mobile Banking', 'Priority Support', 'API Access']
             ],
             [
                 'name' => 'Enterprise',
                 'price' => 'Custom',
-                'period' => 'contact us',
+                'period' => 'Contact us',
                 'featured' => false,
                 'features' => ['Unlimited Members', 'Custom Development', 'Dedicated Account Manager', 'Regulatory Compliance', '24/7 Phone Support', 'On-premise Option']
             ]
@@ -744,6 +744,12 @@ $pageTitle = $product['name'];
       <li><a href="solutions.php">Solutions</a></li>
       <li><a href="portfolio.php" class="active">Portfolio</a></li>
       <li><a href="contact.php">Contact</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">More <span class="dropdown-arrow">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Coming Soon</a></li>
+        </ul>
+      </li>
     </ul>
     
     <a href="contact.php" class="btn btn-primary nav-cta">Let's Talk</a>

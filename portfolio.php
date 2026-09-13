@@ -165,51 +165,65 @@ $currentPage = 'portfolio';
         transition: all 0.3s ease;
         font-family: 'Manrope', sans-serif;
         cursor: pointer;
+        text-decoration: none;
     }
     
     .featured-product-visual {
         position: relative;
     }
     
-    .product-image-wrapper {
-        background: var(--grad);
-        border-radius: 20px;
-        padding: 40px;
-        min-height: 450px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 20px 40px rgba(37,99,255,0.2);
-    }
-    
-    .product-image-wrapper::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -50%;
-        width: 100%;
-        height: 100%;
-        background: rgba(255,255,255,0.1);
-        border-radius: 50%;
-        animation: float 6s ease-in-out infinite;
-    }
-    
-    .product-image-wrapper img {
-        width: 100%;
-        max-width: 400px;
-        border-radius: 12px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        position: relative;
-        z-index: 1;
-    }
-    
-    .product-image-fallback {
-        font-size: 8rem;
-        position: relative;
-        z-index: 1;
-    }
+    /* Product Image Wrapper */
+.product-image-wrapper {
+    background: var(--grad);
+    border-radius: 20px;
+    padding: 30px;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(37,99,255,0.2);
+}
+
+.product-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Featured Product Image */
+.product-featured-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s ease;
+    object-fit: contain;
+}
+
+.featured-product-visual:hover .product-featured-image {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+/* Fallback Emoji */
+.product-image-fallback {
+    font-size: 8rem;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+}
     
     /* Products Grid */
     .products-section {
@@ -525,16 +539,22 @@ $currentPage = 'portfolio';
           </ul>
           
           <div class="product-actions">
-            <a href="product-pos-pro.php" class="btn-primary">View Product <span>→</span></a>
-            <a href="contact.php" class="btn-secondary">Request Demo</a>
+            <a href="https://pospro.wayronx.com/" class="btn-primary">View Product <span>→</span></a>
+            <a href="product-details.php?product=pos-pro" class="btn-secondary">More Details</a>
           </div>
         </div>
         
         <div class="featured-product-visual reveal-right">
-          <div class="product-image-wrapper">
-            <div class="product-image-fallback">💳</div>
-          </div>
-        </div>
+    <div class="product-image-wrapper">
+        <img 
+            src="assets/images/pos-pro-featured.png" 
+            alt="POS Pro - Point of Sale & Marketplace Platform" 
+            class="product-featured-image"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <div class="product-image-fallback" style="display: none;">💳</div>
+    </div>
+</div>
       </div>
     </div>
   </section>
@@ -550,7 +570,7 @@ $currentPage = 'portfolio';
       
       <div class="products-grid">
         <!-- POS Pro -->
-        <a href="product-pos-pro.php" class="product-card reveal-zoom stagger-1">
+        <a href="product-details.php?product=pos-pro" class="product-card reveal-zoom stagger-1">
           <div class="product-card-image">💳</div>
           <div class="product-card-content">
             <span class="product-card-tag">Retail & Commerce</span>
@@ -562,12 +582,12 @@ $currentPage = 'portfolio';
               <li>Sales analytics</li>
               <li>Customer management</li>
             </ul>
-            <span class="product-card-link">View Product <span class="arrow">→</span></span>
+            <span class="product-card-link">More Details <span class="arrow">→</span></span>
           </div>
         </a>
         
         <!-- Manufacturing Management System -->
-        <a href="product-manufacturing.php" class="product-card reveal-zoom stagger-2">
+        <a href="product-details.php?product=manufacturing-system" class="product-card reveal-zoom stagger-2">
           <div class="product-card-image">🏭</div>
           <div class="product-card-content">
             <span class="product-card-tag">Manufacturing</span>
@@ -579,12 +599,12 @@ $currentPage = 'portfolio';
               <li>Supply chain management</li>
               <li>Cost tracking</li>
             </ul>
-            <span class="product-card-link">View Product <span class="arrow">→</span></span>
+            <span class="product-card-link">More Details <span class="arrow">→</span></span>
           </div>
         </a>
         
         <!-- Savings & Credit Management -->
-        <a href="product-savings-credit.php" class="product-card reveal-zoom stagger-3">
+        <a href="product-details.php?product=savings-credit" class="product-card reveal-zoom stagger-3">
           <div class="product-card-image">🏦</div>
           <div class="product-card-content">
             <span class="product-card-tag">Financial Services</span>
@@ -596,7 +616,7 @@ $currentPage = 'portfolio';
               <li>Savings tracking</li>
               <li>Financial reporting</li>
             </ul>
-            <span class="product-card-link">View Product <span class="arrow">→</span></span>
+            <span class="product-card-link">More Details <span class="arrow">→</span></span>
           </div>
         </a>
       </div>
@@ -657,9 +677,9 @@ $currentPage = 'portfolio';
         <div class="foot-col">
           <h4>Products</h4>
           <ul>
-            <li><a href="product-pos-pro.php">POS Pro</a></li>
-            <li><a href="product-manufacturing.php">Manufacturing System</a></li>
-            <li><a href="product-savings-credit.php">Savings & Credit</a></li>
+            <li><a href="product-details.php?product=pos-pro">POS Pro</a></li>
+            <li><a href="product-details.php?product=manufacturing-system">Manufacturing System</a></li>
+            <li><a href="product-details.php?product=savings-credit">Savings & Credit</a></li>
           </ul>
         </div>
         <div class="foot-col">

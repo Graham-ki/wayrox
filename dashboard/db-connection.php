@@ -2,8 +2,8 @@
 // Database configuration
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'wayr_data');
-define('DB_USER', 'wayr');
-define('DB_PASS', 'z56sQrKoiJ4a');
+define('DB_USER', 'root');
+define('DB_PASS', '');
 
 // Create connection
 function getConnection() {
@@ -23,5 +23,24 @@ function getConnection() {
         error_log("Database connection failed: " . $e->getMessage());
         return null;
     }
+}
+/**
+ * Quick query helper with optional caching
+ */
+function db_query_cached($cacheKey, $ttl, $sql, $params = []) {
+    require_once __DIR__ . '/../includes/cache.php';
+    return cache_remember($cacheKey, $ttl, function() use ($sql, $params) {
+        $pdo = getConnection();
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute($params);
+        return $stmt->fetchAll();
+    });
+}
+
+function db_execute($sql, $params = []) {
+    $pdo = getConnection();
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute($params);
+    return $stmt;
 }
 ?>

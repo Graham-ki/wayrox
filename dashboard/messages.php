@@ -1,9 +1,9 @@
 <?php
-session_start();
+//session_start();
 require_once 'config/auth.php';
 
 // Check if user is logged in
-include_once ' db-connection.php';
+//include_once ' db-connection.php';
 requireLogin();
 $pdo = getConnection();
 $stmtUnread = $pdo->prepare("SELECT COUNT(id) as total FROM messages WHERE is_read = 0");
@@ -872,20 +872,25 @@ $currentUser = getCurrentUser();
         </div>
         
         <nav class="sidebar-nav">
-            <ul>
-                <li><a href="index.php"><span class="icon">📊</span>Overview</a></li>
-                <li><a href="#"><span class="icon">👥</span>Users</a></li>
-                <li><a href="messages.php" class="active"><span class="icon">✉️</span>Messages <span class="badge"><?php echo $unreadCount;?></span></a></li>
-                <li><a href="#"><span class="icon">📝</span>Blog Posts</a></li>
-                <li><a href="#"><span class="icon">🛠️</span>Services</a></li>
-                <li><a href="#"><span class="icon">💡</span>Solutions</a></li>
-                <li><a href="#"><span class="icon">💼</span>Careers</a></li>
-                <li><a href="#"><span class="icon">👨‍💼</span>Team (HRM)</a></li>
-                <li><a href="#"><span class="icon">💰</span>Finances</a></li>
-                <li><a href="#"><span class="icon">📈</span>Analytics</a></li>
-                <li><a href="#"><span class="icon">⚙️</span>Settings</a></li>
-            </ul>
-        </nav>
+        <ul>
+            <li><a href="index.php"><span class="icon">📊</span>Overview</a></li>
+            <li><a href="#"><span class="icon">👥</span>Users</a></li>
+            <li><a href="messages.php"><span class="icon">✉️</span>Messages <?php if ($unreadCount > 0): ?><span class="badge"><?php echo $unreadCount; ?></span><?php endif; ?></a></li>
+            <li><a href="#"><span class="icon">📝</span>Blog Posts</a></li>
+            <li><a href="#"><span class="icon">🛠️</span>Services</a></li>
+            <li><a href="shop-products.php"><span class="icon">🛍️</span>Shop Products</a></li>
+            <li><a href="shop-orders.php" class="active"><span class="icon">📦</span>Shop Orders</a></li>
+            <li><a href="shop-categories.php"><span class="icon">📁</span>Categories</a></li>
+            <li><a href="shop-delivery.php"><span class="icon">🚚</span>Delivery Regions</a></li>
+            <li><a href="shop-settings.php"><span class="icon">⚙️</span>Shop Settings</a></li>
+            <li><a href="#"><span class="icon">💡</span>Solutions</a></li>
+            <li><a href="#"><span class="icon">💼</span>Careers</a></li>
+            <li><a href="#"><span class="icon">👨‍💼</span>Team (HRM)</a></li>
+            <li><a href="#"><span class="icon">💰</span>Finances</a></li>
+            <li><a href="#"><span class="icon">📈</span>Analytics</a></li>
+            <li><a href="#"><span class="icon">⚙️</span>Settings</a></li>
+        </ul>
+    </nav>
         
         <div class="sidebar-footer">
             <a href="https://wayronx.com/"><span>🏠</span> Back to Website</a>

@@ -14,6 +14,7 @@ $products = [
         'tagline' => 'Point of Sale & Marketplace',
         'category' => 'Retail & Commerce',
         'category_icon' => '💳',
+        'link' => 'https://pospro.wayronx.com',
         'hero_icon' => '💳',
         'hero_description' => 'The complete point-of-sale and marketplace platform trusted by retailers, restaurants, supermarkets, and multi-store chains. Manage sales, inventory, customers, and grow your business — all from one powerful platform.',
         'overview_title' => 'Everything your retail business needs.',
@@ -70,6 +71,7 @@ $products = [
         'tagline' => 'Production Management Platform',
         'category' => 'Manufacturing',
         'category_icon' => '🏭',
+        'link' => 'https://opspro.wayronx.com/',
         'hero_icon' => '🏭',
         'hero_description' => 'End-to-end production management system that optimizes your entire manufacturing workflow — from raw materials to finished goods. Track production, manage quality, control costs, and scale your operations with confidence.',
         'overview_title' => 'Take control of your production floor.',
@@ -130,6 +132,7 @@ $products = [
         'hero_description' => 'A comprehensive solution for SACCOs, microfinance institutions, credit unions, and community banks. Manage members, savings, loans, and financial reporting with ease and confidence.',
         'overview_title' => 'Modern financial management for growing institutions.',
         'overview_description' => 'Streamline your operations, reduce errors, and serve your members better with our comprehensive platform.',
+        'link' => 'https://scms.wayronx.com/',
         'features' => [
             ['icon' => '👥', 'title' => 'Member Management', 'description' => 'Complete member profiles, KYC documentation, and communication tools to keep you connected.'],
             ['icon' => '💰', 'title' => 'Savings Management', 'description' => 'Handle multiple account types, interest calculations, deposits, withdrawals, and statements.'],
@@ -748,6 +751,7 @@ $pageTitle = $product['name'];
         <a href="#" class="dropdown-toggle">More <span class="dropdown-arrow">▼</span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Coming Soon</a></li>
+          <li><a href="shop/index.php">Shop</a></li>
         </ul>
       </li>
     </ul>
@@ -767,7 +771,7 @@ $pageTitle = $product['name'];
         <p><?php echo htmlspecialchars($product['hero_description']); ?></p>
         
         <div class="product-hero-actions">
-          <a href="contact.php" class="btn-white">Request Demo <span>→</span></a>
+          <a href="<?php echo htmlspecialchars($product['link']); ?>" class="btn-white">View Product <span>→</span></a>
           <a href="#features" class="btn-outline">Explore Features</a>
         </div>
       </div>

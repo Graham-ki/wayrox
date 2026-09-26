@@ -33,6 +33,32 @@ switch ($action) {
         }
         
         $result = loginUser($username, $password);
+
+        if (($result['success'] ?? false) === true) {
+            $user = $result['user'] ?? null;
+            $role = null;
+
+            if (is_array($user)) {
+                $role = $user['role'] ?? $user['user_role'] ?? $user['role_name'] ?? null;
+            }
+
+            if ($role === null && isset($result['role'])) {
+                $role = $result['role'];
+            }
+
+            if ($role !== null && strtolower((string) $role) !== 'admin') {
+                echo json_encode(['success' => false, 'message' => 'Unauthorised: Admin access only!']);
+                exit;
+            }
+
+            if ($role === null && isset($result['user_id'])) {
+                // If role information is not available in the response, reject the login
+                // to enforce admin-only access for this endpoint.
+                echo json_encode(['success' => false, 'message' => 'Unauthorised: Admin access only!']);
+                exit;
+            }
+        }
+
         echo json_encode($result);
         break;
         

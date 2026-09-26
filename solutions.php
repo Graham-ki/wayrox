@@ -1,9 +1,39 @@
+<?php
+session_start();
+$pageTitle = 'Solutions';
+$currentPage = 'solutions';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solutions — WayronX</title>
+
+<title>Business Solutions — AI, Automation & Cloud | WayronX</title>
+<meta name="title" content="Business Solutions — AI, Automation & Cloud | WayronX">
+<meta name="description" content="Explore WayronX solutions: intelligent process automation, custom business platforms, business process automation, cloud migration, predictive analytics, mobile-first apps, hardware repair, and network connectivity solutions.">
+<meta name="keywords" content="business solutions, AI solutions, process automation, cloud migration, predictive analytics, mobile solutions Uganda, hardware repair, network connectivity, IT support Africa">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<link rel="canonical" href="https://wayronx.com/solutions.php">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wayronx.com/solutions.php">
+<meta property="og:title" content="WayronX Solutions — For Every Business Challenge">
+<meta property="og:description" content="Intelligent process automation, cloud migration, predictive analytics, hardware repair, network connectivity, and more — solutions built for real results.">
+<meta property="og:image" content="https://wayronx.com/assets/images/og-solutions.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="WayronX">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WayronX Solutions — For Every Business Challenge">
+<meta name="twitter:description" content="Intelligent process automation, cloud migration, predictive analytics, hardware repair, network connectivity, and more.">
+<meta name="twitter:image" content="https://wayronx.com/assets/images/og-solutions.jpg">
+
+<meta name="theme-color" content="#050816">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -123,6 +153,8 @@
         cursor: pointer;
         position: relative;
         display: block;
+        text-decoration: none;
+        color: inherit;
     }
     
     .solution-card:hover {
@@ -222,11 +254,7 @@
         transition: transform 0.3s ease;
     }
     
-    .solution-card-link:hover {
-        color: var(--purple);
-    }
-    
-    .solution-card-link:hover .arrow {
+    .solution-card:hover .solution-card-link .arrow {
         transform: translateX(5px);
     }
     
@@ -429,6 +457,7 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
+        text-decoration: none;
     }
     
     .btn-white:hover {
@@ -488,18 +517,19 @@
     <ul class="nav-menu" id="navMenu">
       <li><a href="index.php">Home</a></li>
       <li><a href="about.php">About</a></li>
-      <li><a href="services.php">Services</a></li>
-      <li><a href="solutions.php" class="active">Solutions</a></li>
+      <li><a href="services.php" class="active">Services</a></li>
+      <li><a href="solutions.php">Solutions</a></li>
       <li><a href="contact.php">Contact</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle">More <span class="dropdown-arrow">▼</span></a>
         <ul class="dropdown-menu">
-            <li><a href="#">Coming soon</a></li>
-          <!--<li><a href="careers.html">Careers</a></li>
-          <li><a href="team.html">Our Team</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="contact.html">Contact</a></li>-->
+        <li><a href="#">Coming Soon</a></li>
+        <li><a href="shop/index.php">Shop</a></li>
+          <!--<li><a href="careers.php">Careers</a></li>
+          <li><a href="team.php">Our Team</a></li>
+          <li><a href="faq.php">FAQ</a></li>
+          <li><a href="pricing.php">Pricing</a></li>
+          <li><a href="contact.php">Contact</a></li>-->
         </ul>
       </li>
     </ul>
@@ -524,13 +554,14 @@
       <div class="category-tabs reveal">
         <button class="category-tab active" data-category="all">All Solutions</button>
         <button class="category-tab" data-category="ai">AI & Intelligence</button>
-        <button class="category-tab" data-category="digital">Software & Digital Platforms</button>
+        <button class="category-tab" data-category="digital">Digital Platforms</button>
         <button class="category-tab" data-category="automation">Automation</button>
         <button class="category-tab" data-category="cloud">Cloud & Infrastructure</button>
+        <button class="category-tab" data-category="support">IT Support</button>
       </div>
       
       <div class="solutions-grid">
-        <!-- Solution 1 -->
+        <!-- Solution 1: Intelligent Process Automation -->
         <a href="solution-details.php?id=intelligent-automation" class="solution-card reveal-zoom stagger-1" data-category="ai">
           <div class="solution-card-image">🧠</div>
           <div class="solution-card-content">
@@ -547,7 +578,7 @@
           </div>
         </a>
         
-        <!-- Solution 2 -->
+        <!-- Solution 2: Custom Business Platforms -->
         <a href="solution-details.php?id=custom-platforms" class="solution-card reveal-zoom stagger-2" data-category="digital">
           <div class="solution-card-image">🌐</div>
           <div class="solution-card-content">
@@ -564,7 +595,7 @@
           </div>
         </a>
         
-        <!-- Solution 3 -->
+        <!-- Solution 3: Business Process Automation -->
         <a href="solution-details.php?id=process-automation" class="solution-card reveal-zoom stagger-3" data-category="automation">
           <div class="solution-card-image">⚙️</div>
           <div class="solution-card-content">
@@ -581,7 +612,7 @@
           </div>
         </a>
         
-        <!-- Solution 4 -->
+        <!-- Solution 4: Cloud Migration & Management -->
         <a href="solution-details.php?id=cloud-migration" class="solution-card reveal-zoom stagger-4" data-category="cloud">
           <div class="solution-card-image">☁️</div>
           <div class="solution-card-content">
@@ -598,7 +629,7 @@
           </div>
         </a>
         
-        <!-- Solution 5 -->
+        <!-- Solution 5: Predictive Analytics Platform -->
         <a href="solution-details.php?id=predictive-analytics" class="solution-card reveal-zoom stagger-5" data-category="ai">
           <div class="solution-card-image">📊</div>
           <div class="solution-card-content">
@@ -615,7 +646,7 @@
           </div>
         </a>
         
-        <!-- Solution 6 -->
+        <!-- Solution 6: Mobile-First Solutions -->
         <a href="solution-details.php?id=mobile-solutions" class="solution-card reveal-zoom stagger-6" data-category="digital">
           <div class="solution-card-image">📱</div>
           <div class="solution-card-content">
@@ -627,6 +658,40 @@
               <li>Progressive web apps</li>
               <li>Cross-platform development</li>
               <li>App maintenance</li>
+            </ul>
+            <span class="solution-card-link">View Details <span class="arrow">→</span></span>
+          </div>
+        </a>
+        
+        <!-- Solution 7: Hardware Repair & Maintenance -->
+        <a href="solution-details.php?id=hardware-repair" class="solution-card reveal-zoom stagger-1" data-category="support">
+          <div class="solution-card-image">🔧</div>
+          <div class="solution-card-content">
+            <span class="solution-card-tag">IT Support</span>
+            <h3>Hardware Repair & Maintenance</h3>
+            <p>Keep your equipment running at peak performance with professional repair and preventive maintenance services.</p>
+            <ul class="solution-card-features">
+              <li>Computer & laptop repair</li>
+              <li>Server maintenance</li>
+              <li>Preventive servicing</li>
+              <li>Hardware upgrades</li>
+            </ul>
+            <span class="solution-card-link">View Details <span class="arrow">→</span></span>
+          </div>
+        </a>
+        
+        <!-- Solution 8: Network & Connectivity Solutions -->
+        <a href="solution-details.php?id=network-connectivity" class="solution-card reveal-zoom stagger-2" data-category="support">
+          <div class="solution-card-image">📡</div>
+          <div class="solution-card-content">
+            <span class="solution-card-tag">IT Support</span>
+            <h3>Network & Connectivity Solutions</h3>
+            <p>Reliable, secure, and high-speed internet infrastructure for your business — from setup to management.</p>
+            <ul class="solution-card-features">
+              <li>Business internet setup</li>
+              <li>Wi-Fi network design</li>
+              <li>Network security</li>
+              <li>24/7 monitoring</li>
             </ul>
             <span class="solution-card-link">View Details <span class="arrow">→</span></span>
           </div>
@@ -734,15 +799,15 @@
           <ul>
             <li><a href="about.php">About</a></li>
             <li><a href="services.php">Our Approach</a></li>
-            <li><a href="#">Careers</a></li>
+            <li><a href="careers.php">Careers</a></li>
           </ul>
         </div>
         <div class="foot-col">
-          <h4>Services</h4>
+          <h4>Products</h4>
           <ul>
-            <li><a href="services.php">AI &amp; Intelligent Solutions</a></li>
-            <li><a href="services.php">Digital Solutions</a></li>
-            <li><a href="services.php">Automation</a></li>
+            <li><a href="product-details.php?product=pos-pro">POS Pro</a></li>
+            <li><a href="product-details.php?product=manufacturing-system">Manufacturing System</a></li>
+            <li><a href="product-details.php?product=savings-credit">Savings & Credit</a></li>
           </ul>
         </div>
         <div class="foot-col">
@@ -750,7 +815,7 @@
           <ul>
             <li><a href="#">LinkedIn</a></li>
             <li><a href="#">Instagram</a></li>
-            <li><a href="mailto:hello@wayronx.com">Email</a></li>
+            <li><a href="mailto:wayronx01@gmail.com">Email</a></li>
           </ul>
         </div>
       </div>

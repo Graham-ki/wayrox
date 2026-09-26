@@ -502,6 +502,7 @@ $currentPage = 'portfolio';
         <a href="#" class="dropdown-toggle">More <span class="dropdown-arrow">▼</span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Coming Soon</a></li>
+          <li><a href="shop/index.php">Shop</a></li>
         </ul>
       </li>
     </ul>

@@ -499,6 +499,7 @@ $currentPage = 'faq';
         <a href="#" class="dropdown-toggle" class="active">More <span class="dropdown-arrow">▼</span></a>
         <ul class="dropdown-menu">
           <li><a href="faq.php" class="active">FAQ</a></li>
+          <li><a href="shop/index.php">Shop</a></li>
         </ul>
       </li>
     </ul>
